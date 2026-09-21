@@ -12,3 +12,10 @@
 - [x] Aplicar a direção 2 apenas na Home, com logo enviada e banner arredondado do curso
 - [x] Manter Mini games e Contato somente como itens “em breve” no menu
 - [x] Validar a Home no celular e no computador
+
+# Revisão dos stories
+
+- [x] Revisar o encaixe dos textos nas telas mais apertadas
+- [x] Deixar explícito que a primeira interação exige uma resposta
+- [x] Remover “Está postando pouco” da última pergunta solicitada
+- [x] Validar novamente todas as 31 telas em 360×640
