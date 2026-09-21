@@ -18,4 +18,4 @@
 - [x] Revisar o encaixe dos textos nas telas mais apertadas
 - [x] Deixar explícito que a primeira interação exige uma resposta
 - [x] Remover “Está postando pouco” da última pergunta solicitada
-- [ ] Validar novamente todas as 31 telas em 360×640
+- [x] Validar novamente todas as 31 telas em 360×640
