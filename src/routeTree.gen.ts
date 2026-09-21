@@ -10,11 +10,23 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ComecarRouteImport } from './routes/comecar'
+import { Route as IscaRouteImport } from './routes/isca'
 import { Route as PrivacidadeRouteImport } from './routes/privacidade'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComecarRoute = ComecarRouteImport.update({
+  id: '/comecar',
+  path: '/comecar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IscaRoute = IscaRouteImport.update({
+  id: '/isca',
+  path: '/isca',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacidadeRoute = PrivacidadeRouteImport.update({
@@ -25,27 +37,35 @@ const PrivacidadeRoute = PrivacidadeRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/comecar': typeof ComecarRoute
+  '/isca': typeof IscaRoute
   '/privacidade': typeof PrivacidadeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/comecar': typeof ComecarRoute
+  '/isca': typeof IscaRoute
   '/privacidade': typeof PrivacidadeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/comecar': typeof ComecarRoute
+  '/isca': typeof IscaRoute
   '/privacidade': typeof PrivacidadeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/privacidade'
+  fullPaths: '/' | '/comecar' | '/isca' | '/privacidade'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/privacidade'
-  id: '__root__' | '/' | '/privacidade'
+  to: '/' | '/comecar' | '/isca' | '/privacidade'
+  id: '__root__' | '/' | '/comecar' | '/isca' | '/privacidade'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ComecarRoute: typeof ComecarRoute
+  IscaRoute: typeof IscaRoute
   PrivacidadeRoute: typeof PrivacidadeRoute
 }
 
@@ -56,6 +76,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comecar': {
+      id: '/comecar'
+      path: '/comecar'
+      fullPath: '/comecar'
+      preLoaderRoute: typeof ComecarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/isca': {
+      id: '/isca'
+      path: '/isca'
+      fullPath: '/isca'
+      preLoaderRoute: typeof IscaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacidade': {
@@ -70,6 +104,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ComecarRoute: ComecarRoute,
+  IscaRoute: IscaRoute,
   PrivacidadeRoute: PrivacidadeRoute,
 }
 export const routeTree = rootRouteImport
