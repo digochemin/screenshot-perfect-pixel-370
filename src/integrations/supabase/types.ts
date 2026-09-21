@@ -82,6 +82,16 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      create_qg_lead: {
+        Args: {
+          p_email: string
+          p_nome: string
+          p_progress_token: string
+          p_time: string
+          p_whatsapp: string
+        }
+        Returns: string
+      }
       update_lead_story_progress: {
         Args: {
           p_acertos: Json
