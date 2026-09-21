@@ -11,4 +11,4 @@
 
 - [x] Aplicar a direção 2 apenas na Home, com logo enviada e banner arredondado do curso
 - [x] Manter Mini games e Contato somente como itens “em breve” no menu
-- [ ] Validar a Home no celular e no computador
+- [x] Validar a Home no celular e no computador
