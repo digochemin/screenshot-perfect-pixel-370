@@ -300,6 +300,9 @@ html, body { min-height: 100%; }
   .capture-wrap { padding-top: .75rem; gap: .55rem; }
   .capture-form { gap: .42rem; }
   .capture-form input:not([type=checkbox]), .capture-form select { height: 2.45rem; }
-  .ticket-row + .funnel { transform: scale(.92); transform-origin: center; margin-block: -.35rem; }
+  .ticket-row + .funnel { transform: scale(.82); transform-origin: center; margin-block: -1.05rem; }
+  .story-content:has(.ticket-row) { gap: .25rem; font-size: .66rem; line-height: 1.15; }
+  .story-content:has(.ticket-row) .story-title { font-size: 1.7rem; }
+  .story-content:has(.ticket-row) .why-panel { font-size: .57rem; padding: .3rem .45rem; }
 }
 @media (prefers-reduced-motion: reduce) { .home-cta { animation: none; } }
