@@ -30,9 +30,9 @@ function CapturePage() {
     if (!form.name.trim() || form.whatsapp.replace(/\D/g, "").length !== 11 || !/^\S+@\S+\.\S+$/.test(form.email) || !team || !form.consent) { setError("Preencha todos os campos e aceite a Política de Privacidade."); return; }
     setSending(true); setError("");
     const token = crypto.randomUUID();
-    const { data, error: insertError } = await supabase.from("leads").insert({ nome: form.name.trim(), whatsapp: form.whatsapp, email: form.email.trim(), time: team, progress_token: token }).select("id").single();
-    if (insertError || !data) { setSending(false); setError("Não foi possível começar agora. Tente novamente."); return; }
-    localStorage.setItem("qg-lead-session", JSON.stringify({ id: data.id, token, name: form.name.trim(), team, gentilic: gentilic[team] ?? `torcedores do ${team}` }));
+    const { data: leadId, error: insertError } = await supabase.rpc("create_qg_lead", { p_nome: form.name.trim(), p_whatsapp: form.whatsapp, p_email: form.email.trim(), p_time: team, p_progress_token: token });
+    if (insertError || !leadId) { setSending(false); setError("Não foi possível começar agora. Tente novamente."); return; }
+    localStorage.setItem("qg-lead-session", JSON.stringify({ id: leadId, token, name: form.name.trim(), team, gentilic: gentilic[team] ?? `torcedores do ${team}` }));
     localStorage.removeItem("qg-story-progress");
     window.dispatchEvent(new CustomEvent("Lead"));
     void navigate({ to: "/isca" });
