@@ -5,4 +5,4 @@
 - [x] Criar a página de captura
 - [x] Criar as 31 telas educativas e as cinco interações
 - [x] Manter a página de privacidade exigida pelo consentimento
-- [ ] Validar a jornada completa em 360×640
+- [x] Validar a jornada completa em 360×640
