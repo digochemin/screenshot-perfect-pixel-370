@@ -14,7 +14,51 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      leads: {
+        Row: {
+          data_criacao: string
+          email: string
+          id: string
+          nicho_resultado: string
+          nome: string
+          placar_algoritmo: number
+          placar_usuario: number
+          semana_montada: Json
+          situacao_pagina: string
+          time: string
+          valores_simulador: Json
+          whatsapp: string
+        }
+        Insert: {
+          data_criacao?: string
+          email: string
+          id?: string
+          nicho_resultado: string
+          nome: string
+          placar_algoritmo?: number
+          placar_usuario?: number
+          semana_montada?: Json
+          situacao_pagina: string
+          time: string
+          valores_simulador?: Json
+          whatsapp: string
+        }
+        Update: {
+          data_criacao?: string
+          email?: string
+          id?: string
+          nicho_resultado?: string
+          nome?: string
+          placar_algoritmo?: number
+          placar_usuario?: number
+          semana_montada?: Json
+          situacao_pagina?: string
+          time?: string
+          valores_simulador?: Json
+          whatsapp?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
