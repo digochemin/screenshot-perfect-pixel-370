@@ -209,7 +209,7 @@ html, body { min-height: 100%; }
 .story-dark { background: var(--color-background); color: var(--color-foreground); }
 .story-cream { background: var(--color-cream); color: var(--color-card-foreground); }
 .story-screen.stadium-lights { position: absolute; }
-.story-content { position: relative; z-index: 25; flex: 1; min-height: 0; width: min(100%, 38rem); margin: .65rem auto 1.4rem; display: flex; flex-direction: column; justify-content: center; gap: .7rem; font-size: clamp(.82rem, 2.25vh, 1rem); line-height: 1.35; pointer-events: none; }
+.story-content { position: relative; z-index: 25; flex: 1; min-height: 0; width: min(100%, 38rem); margin: .65rem auto 1.4rem; display: flex; flex-direction: column; justify-content: center; gap: .7rem; overflow: clip; font-size: clamp(.82rem, 2.25vh, 1rem); line-height: 1.35; pointer-events: none; }
 .story-content button, .story-content a { pointer-events: auto; }
 .story-footer { position: absolute; z-index: 30; left: 1rem; right: 1rem; bottom: max(.45rem, env(safe-area-inset-bottom)); display: flex; justify-content: space-between; color: currentColor; font-size: .58rem; opacity: .75; }
 .story-center { text-align: center; margin: auto; }
@@ -300,5 +300,6 @@ html, body { min-height: 100%; }
   .capture-wrap { padding-top: .75rem; gap: .55rem; }
   .capture-form { gap: .42rem; }
   .capture-form input:not([type=checkbox]), .capture-form select { height: 2.45rem; }
+  .ticket-row + .funnel { transform: scale(.92); transform-origin: center; margin-block: -.35rem; }
 }
 @media (prefers-reduced-motion: reduce) { .home-cta { animation: none; } }
