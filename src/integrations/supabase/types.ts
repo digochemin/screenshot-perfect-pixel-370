@@ -16,6 +16,9 @@ export type Database = {
     Tables: {
       leads: {
         Row: {
+          acertos: Json
+          concluiu: boolean
+          data_cadastro: string
           data_criacao: string
           email: string
           id: string
@@ -23,27 +26,39 @@ export type Database = {
           nome: string
           placar_algoritmo: number
           placar_usuario: number
+          progress_token: string | null
           semana_montada: Json
           situacao_pagina: string
+          tela_maxima: number
+          ticket_escolhido: number | null
           time: string
           valores_simulador: Json
           whatsapp: string
         }
         Insert: {
+          acertos?: Json
+          concluiu?: boolean
+          data_cadastro?: string
           data_criacao?: string
           email: string
           id?: string
-          nicho_resultado: string
+          nicho_resultado?: string
           nome: string
           placar_algoritmo?: number
           placar_usuario?: number
+          progress_token?: string | null
           semana_montada?: Json
-          situacao_pagina: string
+          situacao_pagina?: string
+          tela_maxima?: number
+          ticket_escolhido?: number | null
           time: string
           valores_simulador?: Json
           whatsapp: string
         }
         Update: {
+          acertos?: Json
+          concluiu?: boolean
+          data_cadastro?: string
           data_criacao?: string
           email?: string
           id?: string
@@ -51,8 +66,11 @@ export type Database = {
           nome?: string
           placar_algoritmo?: number
           placar_usuario?: number
+          progress_token?: string | null
           semana_montada?: Json
           situacao_pagina?: string
+          tela_maxima?: number
+          ticket_escolhido?: number | null
           time?: string
           valores_simulador?: Json
           whatsapp?: string
@@ -64,7 +82,27 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      create_qg_lead: {
+        Args: {
+          p_email: string
+          p_nome: string
+          p_progress_token: string
+          p_time: string
+          p_whatsapp: string
+        }
+        Returns: string
+      }
+      update_lead_story_progress: {
+        Args: {
+          p_acertos: Json
+          p_concluiu: boolean
+          p_lead_id: string
+          p_progress_token: string
+          p_tela_maxima: number
+          p_ticket_escolhido: number
+        }
+        Returns: boolean
+      }
     }
     Enums: {
       [_ in never]: never
