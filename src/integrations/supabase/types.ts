@@ -16,6 +16,9 @@ export type Database = {
     Tables: {
       leads: {
         Row: {
+          acertos: Json
+          concluiu: boolean
+          data_cadastro: string
           data_criacao: string
           email: string
           id: string
@@ -25,11 +28,16 @@ export type Database = {
           placar_usuario: number
           semana_montada: Json
           situacao_pagina: string
+          tela_maxima: number
+          ticket_escolhido: number | null
           time: string
           valores_simulador: Json
           whatsapp: string
         }
         Insert: {
+          acertos?: Json
+          concluiu?: boolean
+          data_cadastro?: string
           data_criacao?: string
           email: string
           id?: string
@@ -39,11 +47,16 @@ export type Database = {
           placar_usuario?: number
           semana_montada?: Json
           situacao_pagina: string
+          tela_maxima?: number
+          ticket_escolhido?: number | null
           time: string
           valores_simulador?: Json
           whatsapp: string
         }
         Update: {
+          acertos?: Json
+          concluiu?: boolean
+          data_cadastro?: string
           data_criacao?: string
           email?: string
           id?: string
@@ -53,6 +66,8 @@ export type Database = {
           placar_usuario?: number
           semana_montada?: Json
           situacao_pagina?: string
+          tela_maxima?: number
+          ticket_escolhido?: number | null
           time?: string
           valores_simulador?: Json
           whatsapp?: string
