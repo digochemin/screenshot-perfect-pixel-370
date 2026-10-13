@@ -19,3 +19,9 @@
 - [x] Deixar explícito que a primeira interação exige uma resposta
 - [x] Remover por completo a pergunta “O que está errado?” solicitada
 - [x] Validar novamente todas as 31 telas em 360×640
+
+# Sincronização e ajustes finos
+
+- [x] Confirmar a conexão com o GitHub (digochemin/screenshot-perfect-pixel-370, branch main, em sincronia)
+- [x] Corrigir o estouro de largura na página de captura
+- [x] Revalidar Home, Captura e as 30 telas em 360×640
